@@ -1,6 +1,8 @@
 info = {
     # Your first and last name
-    'name' : 'STUDENT NAME',
+    'name' : 'NAME',
+    # Where you live / are from
+    'location' : "PLANET EARTH",
     # The name of your university
     'university' : 'University Name',
     # Information about you
@@ -17,7 +19,7 @@ info = {
     'company_names' : ['Company Name 1', 'Company Name 2', 'Company Name 3'],
     'start_dates' : ['May 2020', 'January 2021', 'June 2021'],
     'end_dates' : ['August 2020', 'May 2021', 'August 2021'],
-    'locations': ['Location X', 'Location Y', 'Location Z'],
+    'work_locations': ['Location X', 'Location Y', 'Location Z'],
     'responsibilities': ['Lorem ipsum dolor sit amet, ea errem forensibus sit. Eu mollis equidem vulputate cum.', 
                         'Id facer alienum tractatos has, quem vocent voluptatum eos ea. Putent vivendo scribentur ne ius.',
                         'Ei simul feugait neglegentur vel, ut nisl pertinax corrumpit mel. Est ei tantas vituperatoribus.'],
