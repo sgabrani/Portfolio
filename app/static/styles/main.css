@@ -303,3 +303,133 @@ nav .fas {
         font-size: 14px;
     }
 }
+
+/*-----------Hobbies-----------*/
+
+.title-box {
+    margin-bottom: 4rem;
+  }
+
+.title-a {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:white;
+}
+
+.subtitle-a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+.line-mf {
+    width: 40px;
+    height: 5px;
+    background-color: #0078ff;
+    margin: 0 auto;
+}
+
+.card-blog {
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-wrapper {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+@media (min-width: 767px) {
+    .card-blog {
+      margin-bottom: 30px;
+    }
+  }
+  
+.card-blog .card-body {
+    position: relative;
+  }
+  
+.card-blog .card-category-box {
+    position: absolute;
+    text-align: center;
+    top: -16px;
+    left: 15px;
+    right: 15px;
+    line-height: 25px;
+    overflow: hidden;
+}
+  
+.card-blog .card-category {
+    display: inline-block;
+    color: #fff;
+    padding: 0 15px 5px;
+    overflow: hidden;
+    background-color: #127cf5;
+    border-radius: 4px;
+}
+  
+.card-blog .card-category .category {
+    color: #fff;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.1px;
+    margin-bottom: 0;
+}
+  
+.card-blog .card-title {
+    font-size: 1.3rem;
+    margin-top: 0.6rem;
+}
+  
+.card-blog .card-description {
+    color: #4e4e4e;
+}
+  
+  .card-blog {
+    display: inline-block;
+}
+  
+.card-blog {
+    color: #4e4e4e;
+    display: inline-block;
+}
+
+.blog-wrapper {
+    font-size: 1.5rem;
+}
+  
+@media (min-width: 768px) {
+    .blog-wrapper {
+      font-size: 1.9rem;
+    }
+}
+  
+.blog-wrapper {
+    margin: 1rem 0;
+}
+  
+.blog-wrapper {
+    border-left: 4px solid #0078ff;
+    margin-top: 1rem;
+}
+  
+.blog-wrapper {
+    display: inline-block;
+    margin-left: 15px;
+}
+  
+.blog-wrapper {
+    color: #0078ff;
+}
+  
+.blog-wrapper {
+    color: #1e1e1e;
+}
+  
+.blog-wrapper {
+    border-left: 4px solid #0078ff;
+    padding: 18px;
+    font-style: italic;
+}
