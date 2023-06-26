@@ -2,7 +2,7 @@ info = {
     # Your first and last name
     'name' : 'NAME',
     # Where you live / are from
-    'location' : "PLANET EARTH",
+    'location' : "Planet Earth",
     # The name of your university
     'university' : 'University Name',
     # Information about you
