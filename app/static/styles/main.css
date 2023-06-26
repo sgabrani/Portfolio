@@ -433,3 +433,11 @@ nav .fas {
     padding: 18px;
     font-style: italic;
 }
+
+/*-----------Map-----------*/
+
+#map { 
+    height: 500px; 
+    width: 75%;
+    margin: auto;
+}
