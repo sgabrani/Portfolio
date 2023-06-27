@@ -460,9 +460,17 @@ nav .fas {
 }
 
 .blog-wrapper {
-  border-left: 4px solid #0078ff;
-  padding: 18px;
-  font-style: italic;
+    border-left: 4px solid #0078ff;
+    padding: 18px;
+    font-style: italic;
+}
+
+/*-----------Map-----------*/
+
+#map { 
+    height: 500px; 
+    width: 75%;
+    margin: auto;
 }
 
 /* Button */
