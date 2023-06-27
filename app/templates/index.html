@@ -32,7 +32,7 @@
                     <li><a href="/">Work Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="/hobbies">Hobbies</a></li>
-                    <li><a href="/contact">Contact Me</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
@@ -118,9 +118,39 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <p>Made by {{ name }} <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+    <!-----------Contact----------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-envelope"></i> work.email@gmail.com</p>
+                    <p><i class="fas fa-paper-plane"></i> personal.email@gmail.com</p>
+                    <div class="social-icons">
+                        <!--<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>-->
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                    <span id="msg"> </span>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>Made by {{ name }} <i class="fa-solid fa-heart"></i></p>
     </div>
 
 <script>
@@ -152,6 +182,25 @@
         sidemenu.style.right = "-200px";
     }
 </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxE6kt2MP_clKxLi5p7QChubnzLGu2bqQ8Zzbv3hNlp_iWT_0su3FwViAfSGidkSnY_8g/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function() {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
 </body>
 </html>
