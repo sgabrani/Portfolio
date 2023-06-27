@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,7 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-
     <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <title>{{ name }}'s Portfolio</title>
@@ -29,7 +27,7 @@
                 </a>
                 <ul id="sidemenu">
                     <li><a href="#about">About Me</a></li>
-                    <li><a href="/">Work Experience</a></li>
+                    <li><a href="#experience">Work Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="/hobbies">Hobbies</a></li>
                     <li><a href="#contact">Contact Me</a></li>
@@ -46,7 +44,6 @@
     </header>
 
     <!-----------About Me----------->
-
     <div id="about">
         <div class="container">
             <div class="row">
@@ -78,10 +75,10 @@
                     </div>
                     <div class="tab-contents" id="achievements">
                         <ul>
-                            <li><span>2021 - Current</span> <br> Description for Acheivement 1</li>
-                            <li><span>2019 - 2021</span> <br> Description for Acheivement 2</li>
-                            <li><span>2017 - 2018</span> <br> Description for Acheivement 3</li>
-                            <li><span>2015 - 2017</span> <br> Description for Acheivement 4</li>
+                            <li><span>2021 - Current</span> <br> Description for Achievement 1</li>
+                            <li><span>2019 - 2021</span> <br> Description for Achievement 2</li>
+                            <li><span>2017 - 2018</span> <br> Description for Achievement 3</li>
+                            <li><span>2015 - 2017</span> <br> Description for Achievement 4</li>
                         </ul>
                     </div>
                 </div>
@@ -90,7 +87,65 @@
     </div>
 
     <!-----------Experience----------->
-
+    <!-- link your resume, linkedin, github and add your email in the card-->
+    <div id="experience">
+        <div class="container">
+            <h1 class="sub-title">My Experience</h1>
+            <div class="divider">
+                <div class="col">
+                    <div style="padding-top: 50px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 1</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div style="padding-top: 40px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 2</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div style="padding-top: 40px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 3</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="sticky-helper">
+                        <div class="card">
+                            <p style="padding-bottom: 10px">
+                                More detailed info about my experience!
+                            </p>
+                            <a class="button button-block" href="/">
+                                <span class="fa fa-file-alt"></span> Résumé
+                            </a>
+                            <a class="button button-block" href="/">
+                                <span class="fab fa-linkedin"></span> LinkedIn
+                            </a>
+                            <a class="button button-block" href="/">
+                                <span class="fab fa-github"></span> GitHub
+                            </a>
+                            <p>
+                                If you want to know more, email me at
+                                <a href="/" style="color: #4dc4d6; text-decoration: none">email</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-----------Projects----------->
     <!--Change the github repository links to your project repo links-->
@@ -137,18 +192,19 @@
                     </div>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                    <span id="msg"> </span>
+                   <form name="submit-to-google-sheet">
+                       <input type="text" name="Name" placeholder="Your Name" required>
+                       <input type="email" name="Email" placeholder="Your Email" required>
+                       <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                       <button type="submit" class="btn">Submit</button>
+                   </form>
+                   <span id="msg"> </span>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-----------Footer----------->
     <div class="footer">
         <p>Made by {{ name }} <i class="fa-solid fa-heart"></i></p>
     </div>
@@ -184,13 +240,12 @@
 </script>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxE6kt2MP_clKxLi5p7QChubnzLGu2bqQ8Zzbv3hNlp_iWT_0su3FwViAfSGidkSnY_8g/exec'
+    const scriptURL = '<SCRIPT URL>'
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById('msg')
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
             msg.innerHTML = "Message sent successfully!"
             setTimeout(function() {
@@ -200,7 +255,7 @@
         })
         .catch(error => console.error('Error!', error.message))
     })
-  </script>
+</script>
 
 </body>
 </html>
