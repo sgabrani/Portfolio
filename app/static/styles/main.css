@@ -17,9 +17,6 @@ body {
 header {
   width: 100%;
   height: 100vh;
-  background-image: url(https://media.istockphoto.com/id/1340597152/photo/male-profile-silhouette-sad-or-loneliness-young-man-on-black-background-unrecognizable-person.jpg?s=170667a&w=0&k=20&c=PnbVfbF_dgoovzlDTVcT8hRaDhI4R0Sh3QC5wnKc7XM=);
-  background-size: cover;
-  background-position: center;
 }
 
 .container {
@@ -66,17 +63,52 @@ nav ul li a:hover::after {
 }
 
 .header-text {
-  margin-top: 20%;
-  font-size: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    font-size: 30px;
 }
 
-.header-text h1 {
-  font-size: 60px;
-  margin-top: 20px;
+.text-content {
+    flex: 0.96;
 }
 
-.header-text span {
-  color: #4dc4d6;
+.text-content h1 {
+    font-size: 60px;
+    margin-top: 20px;
+  }
+  
+.text-content span {
+    color: #4dc4d6;
+}  
+
+.image-container {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 880px) {
+    .header-text {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 }
 
 /*-----------About Me-----------*/
@@ -190,6 +222,29 @@ nav ul li a:hover::after {
     padding-top: 1rem;
     background-color: var(--background-color-root);
   }
+}
+
+@media only screen and (max-width: 650px) {
+    .divider {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .col {
+        width: 100%;
+    }
+    
+    .sticky-helper {
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .card {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 10px;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+      }
 }
 
 /*-----------Projects-----------*/
@@ -358,12 +413,12 @@ nav .fas {
 
 @media only screen and (max-width: 650px) {
     .header-text {
-        margin-top: 100%;
-        font-size: 16px;
+        text-align: center;
+        font-size: 25px;
     }
 
     .header-text h1 {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     nav .fas {
