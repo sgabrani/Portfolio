@@ -31,19 +31,19 @@
             <a href="/">
                 <img src="./static/img/logo.svg" class="nav-logo"/>
             </a>
-            <ul id="sidemenu">
-                <li><a href="/">About Me</a></li>
-                <li><a href="/">Work Experience</a></li>
-                <li><a href="/">Projects</a></li>
-                <li><a href="#">Hobbies</a></li>
-                <li><a href="/contact">Contact Me</a></li>
+            <ul id="sidemenu" style="color: #fff;">
+                <li><a href="/#about">About Me</a></li>
+                <li><a href="/#experience">Work Experience</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/hobbies">Hobbies</a></li>
+                <li><a href="/#contact">Contact Me</a></li>
                 <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
+            <i class="fas fa-bars" style="color: #fff;" onclick="openmenu()"></i>
         </nav>
     </div>
     
-<!-- HOBBIES SECTION -->
+    <!-- HOBBIES SECTION -->
     <section id="blog">
         <div class="container">
             <div class="row">
@@ -141,7 +141,7 @@
                 </div>
             </div>
 
-            <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
         <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
@@ -179,6 +179,11 @@
         </div>
     </section>
     <!-- MAP SECTION ENDS -->
+
+    <!-----------Footer----------->
+    <div class="footer" style="margin-top: 40px; padding-top: 25px; padding-bottom: 10px;">
+        <p>Made by NAME <i class="fa-solid fa-heart"></i></p>
+    </div>
 
     <script>
         var sidemenu = document.getElementById("sidemenu");

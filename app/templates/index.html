@@ -1,277 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta property="og:title" content="Personal Portfolio" />
-    <meta property="og:description" content="My Personal Portfolio" />
-    <meta property="og:url" content="{{ url }}" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <meta property="og:url" content="{{ url }}">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
-    <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
+    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <title>{{ name }}'s Portfolio</title>
-    <script
-      src="https://kit.fontawesome.com/1690528c5b.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+    <script src="https://kit.fontawesome.com/1690528c5b.js" crossorigin="anonymous"></script>
+</head>
 
-  <body>
+<body>
     <header>
-      <div class="container">
-        <nav>
-          <a href="/">
-            <img src="./static/img/logo.svg" class="nav-logo" />
-          </a>
-          <ul id="sidemenu">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Work Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="/hobbies">Hobbies</a></li>
-            <li><a href="/contact">Contact Me</a></li>
-            <i class="fas fa-times" onclick="closemenu()"></i>
-          </ul>
-          <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
+        <div class="container">
+            <nav>
+                <a href="/">
+                    <img src="./static/img/logo.svg" class="nav-logo"/>
+                </a>
+                <ul id="sidemenu">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#experience">Work Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="/hobbies">Hobbies</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
 
-        <div class="header-text">
-          <p>Web Developer</p>
-          <h1>
-            Hi, I'm <span>{{ name }}</span> <br />
-            from {{ location }}
-          </h1>
+            <div class="header-text">
+                <div class="text-content">
+                    <p>Web Developer</p>
+                    <h1>Hi, I'm <span>{{ name }}</span> <br> from {{ location }}</h1>
+                </div>
+                <div class="image-container">
+                    <img src="https://t4.ftcdn.net/jpg/05/09/59/75/360_F_509597532_RKUuYsERhODmkxkZd82pSHnFtDAtgbzJ.jpg" alt="PROFILE_PICTURE">
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
     <!-----------About Me----------->
-
     <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img src="./static/img/logo.jpg" />
-          </div>
-          <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-
-            <!--We can change these tabs to be other categories, like fun facts, coursework, etc-->
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('education')">Education</p>
-              <p class="tab-links" onclick="opentab('achievements')">
-                Achievements
-              </p>
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./static/img/logo.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                    <!--We can change these tabs to be other categories, like fun facts, coursework, etc-->
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Skill 1</span> <br> Description for Skill 1</li>
+                            <li><span>Skill 2</span> <br> Description for Skill 2</li>
+                            <li><span>Skill 3</span> <br> Description for Skill 3</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021 - 2025</span> <br> Description for Education 1</li>
+                            <li><span>2017 - 2021</span> <br> Description for Education 2</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="achievements">
+                        <ul>
+                            <li><span>2021 - Current</span> <br> Description for Achievement 1</li>
+                            <li><span>2019 - 2021</span> <br> Description for Achievement 2</li>
+                            <li><span>2017 - 2018</span> <br> Description for Achievement 3</li>
+                            <li><span>2015 - 2017</span> <br> Description for Achievement 4</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li>
-                  <span>Skill 1</span> <br />
-                  Description for Skill 1
-                </li>
-                <li>
-                  <span>Skill 2</span> <br />
-                  Description for Skill 2
-                </li>
-                <li>
-                  <span>Skill 3</span> <br />
-                  Description for Skill 3
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <ul>
-                <li>
-                  <span>2021 - 2025</span> <br />
-                  Description for Education 1
-                </li>
-                <li>
-                  <span>2017 - 2021</span> <br />
-                  Description for Education 2
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="achievements">
-              <ul>
-                <li>
-                  <span>2021 - Current</span> <br />
-                  Description for Acheivement 1
-                </li>
-                <li>
-                  <span>2019 - 2021</span> <br />
-                  Description for Acheivement 2
-                </li>
-                <li>
-                  <span>2017 - 2018</span> <br />
-                  Description for Acheivement 3
-                </li>
-                <li>
-                  <span>2015 - 2017</span> <br />
-                  Description for Acheivement 4
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
 
     <!-----------Experience----------->
     <!-- link your resume, linkedin, github and add your email in the card-->
     <div id="experience">
-      <div class="container">
-        <h1 class="sub-title">My Experience</h1>
-        <div class="divider">
-          <div class="col">
-            <div style="padding-top: 50px">
-              <h2 style="color: #4ca5b3; padding-bottom: 10px">Experience 1</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+        <div class="container">
+            <h1 class="sub-title">My Experience</h1>
+            <div class="divider">
+                <div class="col">
+                    <div style="padding-top: 50px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 1</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div style="padding-top: 40px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 2</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div style="padding-top: 40px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 3</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                    <div style="padding-top: 40px">
+                        <h2 style="color: #4dc4d6; padding-bottom: 10px">Experience 4</h2>
+                        <p style="color: #e8e7e7;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="sticky-helper">
+                        <div class="card">
+                            <p style="padding-bottom: 10px">
+                                More detailed info about my experience!
+                            </p>
+                            <a class="button button-block" href="/">
+                                <span class="fa fa-file-alt"></span> Résumé
+                            </a>
+                            <a class="button button-block" href="/">
+                                <span class="fab fa-linkedin"></span> LinkedIn
+                            </a>
+                            <a class="button button-block" href="/">
+                                <span class="fab fa-github"></span> GitHub
+                            </a>
+                            <p>
+                                If you want to know more, email me at
+                                <a href="/" style="color: #4dc4d6; text-decoration: none">email</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div style="padding-top: 40px">
-              <h2 style="color: #4ca5b3; padding-bottom: 10px">Experience 2</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="sticky-helper">
-              <div class="card">
-                <p style="padding-bottom: 10px">
-                  More detailed info about my experience!
-                </p>
-
-                <a class="button button-block" href="/">
-                  <span class="fa fa-file-alt"></span> Résumé
-                </a>
-                <a class="button button-block" href="/">
-                  <span class="fab fa-linkedin"></span> LinkedIn
-                </a>
-                <a class="button button-block" href="/">
-                  <span class="fab fa-github"></span> GitHub
-                </a>
-                <p>
-                  If you want to know more, email me at
-                  <a href="/" style="color: #4ca5b3; text-decoration: none"
-                    >email</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
 
     <!-----------Projects----------->
     <!--Change the github repository links to your project repo links-->
     <div id="projects">
-      <div class="container">
-        <h1 class="sub-title">My Projects</h1>
-        <div class="projects-list">
-          <div>
-            <i class="fa-solid fa-code"></i>
-            <h2>Project 1</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="https://github.com/" target="_blank"
-              ><i class="fa-brands fa-github"></i> GitHub Repository</a
-            >
-          </div>
-          <div>
-            <i class="fa-solid fa-crop-simple"></i>
-            <h2>Project 2</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="https://github.com/" target="_blank"
-              ><i class="fa-brands fa-github"></i> GitHub Repository</a
-            >
-          </div>
-          <div>
-            <i class="fa-brands fa-app-store"></i>
-            <h2>Project 3</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <a href="https://github.com/" target="_blank"
-              ><i class="fa-brands fa-github"></i> GitHub Repository</a
-            >
-          </div>
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="projects-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Project 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Project 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Project 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i> GitHub Repository</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="footer">
-        <p>Made by {{ name }} <i class="fa-solid fa-heart"></i></p>
-      </div>
     </div>
 
-    <script>
-      var tablinks = document.getElementsByClassName("tab-links");
-      var tabcontents = document.getElementsByClassName("tab-contents");
+    <!-----------Contact----------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-envelope"></i> work.email@gmail.com</p>
+                    <p><i class="fas fa-paper-plane"></i> personal.email@gmail.com</p>
+                    <div class="social-icons">
+                        <!--<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>-->
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                   <form name="submit-to-google-sheet">
+                       <input type="text" name="Name" placeholder="Your Name" required>
+                       <input type="email" name="Email" placeholder="Your Email" required>
+                       <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                       <button type="submit" class="btn">Submit</button>
+                   </form>
+                   <span id="msg"> </span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      function opentab(tabname) {
+    <!-----------Footer----------->
+    <div class="footer">
+        <p>Made by {{ name }} <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
         for (tablink of tablinks) {
-          tablink.classList.remove("active-link");
+            tablink.classList.remove("active-link")
         }
 
         for (tabcontent of tabcontents) {
-          tabcontent.classList.remove("active-tab");
+            tabcontent.classList.remove("active-tab")
         }
 
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
-      }
-    </script>
+    }
+</script>
 
-    <script>
-      var sidemenu = document.getElementById("sidemenu");
+<script>
+    var sidemenu = document.getElementById("sidemenu");
 
-      function openmenu() {
+    function openmenu() {
         sidemenu.style.right = "0";
-      }
+    }
 
-      function closemenu() {
+    function closemenu() {
         sidemenu.style.right = "-200px";
-      }
-    </script>
-  </body>
+    }
+</script>
+
+<script>
+    const scriptURL = '<SCRIPT URL>'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function() {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
 </html>

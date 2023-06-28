@@ -17,9 +17,6 @@ body {
 header {
   width: 100%;
   height: 100vh;
-  background-image: url(https://media.istockphoto.com/id/1340597152/photo/male-profile-silhouette-sad-or-loneliness-young-man-on-black-background-unrecognizable-person.jpg?s=170667a&w=0&k=20&c=PnbVfbF_dgoovzlDTVcT8hRaDhI4R0Sh3QC5wnKc7XM=);
-  background-size: cover;
-  background-position: center;
 }
 
 .container {
@@ -66,24 +63,59 @@ nav ul li a:hover::after {
 }
 
 .header-text {
-  margin-top: 20%;
-  font-size: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    font-size: 30px;
 }
 
-.header-text h1 {
-  font-size: 60px;
-  margin-top: 20px;
+.text-content {
+    flex: 0.96;
 }
 
-.header-text span {
-  color: #4dc4d6;
+.text-content h1 {
+    font-size: 60px;
+    margin-top: 20px;
+  }
+  
+.text-content span {
+    color: #4dc4d6;
+}  
+
+.image-container {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 880px) {
+    .header-text {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 }
 
 /*-----------About Me-----------*/
 
 #about {
-  padding: 80px 0;
-  color: #ababab;
+    padding: 30px 0;
+    color: #ababab;
 }
 
 .row {
@@ -158,6 +190,7 @@ nav ul li a:hover::after {
 }
 
 /*-----------Experience-----------*/
+
 #experience {
   padding: 30px 0;
 }
@@ -189,6 +222,29 @@ nav ul li a:hover::after {
     padding-top: 1rem;
     background-color: var(--background-color-root);
   }
+}
+
+@media only screen and (max-width: 650px) {
+    .divider {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .col {
+        width: 100%;
+    }
+    
+    .sticky-helper {
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .card {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 10px;
+        padding: 1.5rem 2rem 1.5rem 2rem;
+      }
 }
 
 /*-----------Projects-----------*/
@@ -247,20 +303,106 @@ nav ul li a:hover::after {
   transform: translateY(-10px);
 }
 
+/*-----------Contact-----------*/
+
+#contact {
+    margin-top: 30px;
+}
+
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left p {
+    margin-top: 30px;
+}
+
+.contact-left p i {
+    color: #4dc4d6;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: #4dc4d6;
+    transform: translateY(-5px);
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.btn {
+    display: inline-block;
+    background: #4dc4d6;
+    font-size: 18px;
+    margin: 50px auto;
+    margin-top: 20px;
+    width: fit-content;
+    border: 1px solid #4dc4d6;
+    padding: 14px 60px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #4ca5b3;
+    cursor: pointer;
+}
+
+#msg {
+    color: #61b752;
+    margin-top: -30px;
+    display: block;
+}
+
+
 /*-----------Footer-----------*/
 
 .footer {
-  width: 100%;
-  text-align: center;
-  padding: 25px;
-  background: #262626;
-  font-weight: 300;
-  margin-top: 20px;
-  margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 40px;
+    margin-bottom: 0;
+    color: #fff;
 }
 
 .footer i {
-  color: #4dc4d6;
+    color: #4dc4d6;
 }
 
 /*-----------CSS for Smaller Screen-----------*/
@@ -270,69 +412,73 @@ nav .fas {
 }
 
 @media only screen and (max-width: 650px) {
-  .header-text {
-    margin-top: 100%;
-    font-size: 16px;
-  }
+    .header-text {
+        text-align: center;
+        font-size: 25px;
+    }
 
-  .header-text h1 {
-    font-size: 30px;
-  }
+    .header-text h1 {
+        font-size: 50px;
+    }
 
-  nav .fas {
-    display: block;
-    font-size: 25px;
-    cursor: pointer;
-  }
+    nav .fas {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+    }
 
-  nav ul {
-    background: #4dc4d6;
-    position: fixed;
-    top: 0;
-    right: -200px;
-    width: 200px;
-    height: 100vh;
-    padding-top: 50px;
-    z-index: 2;
-    transition: right 0.5s;
-  }
+    nav ul {
+        background: #4dc4d6;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
 
-  nav ul li {
-    display: block;
-    margin: 25px;
-  }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
 
-  nav ul .fas {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-  }
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+    }
 
-  .sub-title {
-    font-size: 40px;
-  }
+    .sub-title {
+        font-size: 40px;
+    }
 
-  .about-col-1,
-  .about-col-2 {
-    flex-basis: 100%;
-  }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
 
-  .about-col-1 {
-    margin-bottom: 30px;
-  }
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
 
-  .about-col-2 {
-    font-size: 14px;
-  }
+    .about-col-2 {
+        font-size: 14px;
+    }
 
-  .tab-links {
-    font-size: 16px;
-    margin-right: 20px;
-  }
+    .tab-links {
+        font-size: 16px;
+        margin-right: 20px;
+    }
 
-  .footer {
-    font-size: 14px;
-  }
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
 }
 
 /*-----------Hobbies-----------*/
@@ -482,7 +628,7 @@ nav .fas {
   font-weight: bold;
 
   border: 1px solid;
-  border-color: #4ca5b3;
+  border-color: #4dc4d6;
   border-radius: 4px;
   padding: 0.75em 1.5em;
   margin-right: 0.5em;
@@ -497,7 +643,7 @@ nav .fas {
 .button:hover,
 .button:focus,
 .button-selected {
-  background-color: #4ca5b3;
+  background-color: #4dc4d6;
   color: var(--soft-white);
   cursor: pointer;
   transform: translateY(-4px);
