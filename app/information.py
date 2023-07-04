@@ -1,8 +1,8 @@
 info = {
     # Your first and last name
-    'name' : 'NAME',
+    'name' : 'Aparna Roy',
     # Where you live / are from
-    'location' : "Planet Earth",
+    'location' : "Delaware",
     # The name of your university
     'university' : 'University Name',
     # Information about you
