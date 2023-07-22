@@ -54,30 +54,30 @@ class AppTestCase(unittest.TestCase):
         self.assertEquals(len(json['timeline_posts']), 0)
 
     def test_timeline_api_post(self):
-        info = {
+        post_data = {
             'name': "Jane Doe",
             'email': "jane@doe.com",
             'content': "My name is Jane!"
         }
-        response = self.client.post('/api/timeline_post', data=info)
+        response = self.client.post('/api/timeline_post', data=post_data)
         self.assertEquals(response.status_code, 200)
         self.assertTrue(response.is_json)
 
         json = response.get_json()
         self.assertIn('id', json)
-        self.assertEquals(json['name'], info['name'])
-        self.assertEquals(json['email'], info['email'])
-        self.assertEquals(json['content'], info['content'])
+        self.assertEquals(json['name'], post_data['name'])
+        self.assertEquals(json['email'], post_data['email'])
+        self.assertEquals(json['content'], post_data['content'])
 
 
     def test_timeline_api_post_then_get(self):
         # POST testing
-        info = {
+        post_data = {
             'name': "Jane Doe",
             'email': "jane@doe.com",
             'content': "My name is Jane!"
         }
-        response_post = self.client.post('/api/timeline_post', data=info)
+        response_post = self.client.post('/api/timeline_post', data=post_data)
         self.assertEquals(response_post.status_code, 200)
         self.assertTrue(response_post.is_json)
 
@@ -92,19 +92,19 @@ class AppTestCase(unittest.TestCase):
 
         posts = json['timeline_posts']
         self.assertIn('id', posts[0])
-        self.assertEquals(posts[0]['name'], info['name'])
-        self.assertEquals(posts[0]['email'], info['email'])
-        self.assertEquals(posts[0]['content'], info['content'])
+        self.assertEquals(posts[0]['name'], post_data['name'])
+        self.assertEquals(posts[0]['email'], post_data['email'])
+        self.assertEquals(posts[0]['content'], post_data['content'])
 
 
     def test_timeline_api_post_then_delete(self):
         # POST testing
-        info = {
+        post_data = {
             'name': "Jane Doe",
             'email': "jane@doe.com",
             'content': "My name is Jane!"
         }
-        response = self.client.post('/api/timeline_post', data=info)
+        response = self.client.post('/api/timeline_post', data=post_data)
         self.assertEquals(response.status_code, 200)
         self.assertTrue(response.is_json)
 
@@ -116,3 +116,36 @@ class AppTestCase(unittest.TestCase):
         response = self.client.delete(f'/api/timeline_post/{delete_id}')
         self.assertEquals(response.status_code, 200)
         self.assertEquals(response.data, b"Timeline post deleted successfully")
+
+    def test_malformed_timeline_post(self):
+        # POST request missing name
+        missing_name_data = {
+            'email': "john@example.com",
+            'content': "Hello world, I'm John!"
+        }
+        response = self.client.post('/api/timeline_post', data=missing_name_data)
+        self.assertEquals(response.status_code, 400)
+        html = response.get_data(as_text=True)
+        self.assertIn("Invalid name", html)
+
+        # POST request with empty content
+        missing_content_data = {
+            'name': "John Doe",
+            'email': "john@example.com",
+            'content': ""
+        }
+        response = self.client.post('/api/timeline_post', data=missing_content_data)
+        self.assertEquals(response.status_code, 400)
+        html = response.get_data(as_text=True)
+        self.assertIn("Invalid content", html)
+
+        # POST request with malformed email
+        malformed_email_data = {
+            'name': "John Doe",
+            'email': "not-an-email",
+            'content': "Hello world, I'm John!"
+        }
+        response = self.client.post('/api/timeline_post', data=malformed_email_data)
+        self.assertEquals(response.status_code, 400)
+        html = response.get_data(as_text=True)
+        self.assertIn("Invalid email", html)
