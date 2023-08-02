@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Change directory to your project folder
-cd /Portfolio
+cd /root/Portfolio
 
 # Step 2: Fetch the latest changes from the main branch on GitHub
 git fetch && git reset origin/main --hard
