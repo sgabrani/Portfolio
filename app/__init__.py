@@ -41,6 +41,10 @@ def index():
 def hobbies():
     return render_template('hobbies.html', url=os.getenv("URL"))
 
+@app.route("/mail.php", methods=["POST"])
+def mail():
+    return render_template('index.html', title="MLH Fellow", name = info['name'], location = info['location'], url=os.getenv("URL"))
+
 @app.route("/api/timeline_post", methods=['GET'])
 def get_time_line_post():
     return {
