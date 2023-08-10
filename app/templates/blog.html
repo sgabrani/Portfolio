@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:title" content="Personal Portfolio" />
+    <meta property="og:description" content="My Personal Portfolio" />
+    <meta property="og:url" content="{{ url }}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+    <link rel="icon" href="./static/img/download.png" type="image/x-icon" />
+    <title>Sahiti Gabrani</title>
+    <script
+      src="https://kit.fontawesome.com/1690528c5b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/">
+            <img src="./static/img/download.png" class="nav-logo" />
+          </a>
+          <ul id="sidemenu">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="/hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li>
+              <button
+                class="dark-mode-toggle"
+                onclick="toggleDarkMode()"
+                aria-label="dark mode toggle button"
+              >
+                <span class="fa fa-fw fa-cloud-sun"></span>
+              </button>
+            </li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <div class="header-text">
+          <div class="text-content">
+            <p class="typewriter">
+              Welcome to my mess of a brain... I meant <span>blog</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="info">
+        <p style="padding-bottom: 10%">
+          Sometimes I lose motivation (usually when I forget that I have a life
+          outside of my laptop) and even meeting my best friends feels like a
+          task on my never ending To-Do list. This is usually due to burnout and
+          it gets all too easy to slip back to old habbits.
+          <br /><br />
+          This is when it's important to write out my thoughts so I don't get
+          lost in my own head, it's how I stay grounded. But also, simply
+          becuase I enjoy writing and rambling.
+        </p>
+        <hr color="#4dc4d6" />
+      </div>
+      <div class="info">
+        <a class="button button-block" href="./static/files/Purple Resume.pdf">
+          All about MLH <span>Aug 8, 2023</span>
+        </a>
+        <a
+          class="button button-block"
+          href="https://www.linkedin.com/in/sahiti-gabrani/"
+        >
+          Me and Music <span> Aug 2, 2023</span>
+        </a>
+        <a
+          style="margin-bottom: 10%"
+          class="button button-block"
+          href="https://github.com/sgabrani"
+        >
+          UCLA: Halfway in <span> July 27, 2023</span>
+        </a>
+        <hr color="#4dc4d6" />
+      </div>
+      <div class="info">
+        <div class="row">
+          <div class="contact2-right">
+            <h3>Tell me what you think</h3>
+            <div class="social-icons">
+              <!--<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>-->
+              <a
+                href="https://www.linkedin.com/in/sahiti-gabrani/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/sahiti_gabrani/?next=%2F"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://github.com/sgabrani" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://github.com/sgabrani" target="_blank"
+                ><i class="fa-brands fa-spotify"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact2-left">
+            <p><i class="fas fa-envelope"></i> sgabrani@ucla.edu</p>
+            <p><i class="fas fa-paper-plane"></i> sahitigabrani@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------Footer----------->
+    <div class="footer">
+      <p>Made by Sahiti Gabrani <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+
+    <script>
+      const scriptURL = "<SCRIPT URL>";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script>
+      // light and dark mode
+      let darkMode = false;
+      let rootStyle = getComputedStyle(document.body);
+
+      function setDarkMode(newMode) {
+        rootStyle = getComputedStyle(document.body);
+        document.documentElement.style.setProperty(
+          "--font-color-root",
+          rootStyle.getPropertyValue(`--font-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--font-em-color-root",
+          rootStyle.getPropertyValue(`--font-em-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--background-color-root",
+          rootStyle.getPropertyValue(`--background-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--background-card-root",
+          rootStyle.getPropertyValue(`--background-card-${newMode}-mode`)
+        );
+      }
+      function toggleDarkMode() {
+        if (darkMode) {
+          // switch to light
+          setDarkMode("light");
+        } else {
+          // switch to dark
+          setDarkMode("dark");
+        }
+        darkMode = !darkMode;
+      }
+
+      // event listener for light/dark mode switch
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+      darkModeMediaQuery.addListener((e) => {
+        const darkModeOn = e.matches;
+        console.log(`Dark was toggled to ${darkModeOn ? "🌒 on" : "☀️ off"}.`);
+        toggleDarkMode();
+      });
+    </script>
+  </body>
+</html>

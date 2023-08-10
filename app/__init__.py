@@ -45,6 +45,13 @@ def hobbies():
 def mail():
     return render_template('index.html', title="MLH Fellow", name = info['name'], location = info['location'], url=os.getenv("URL"))
 
+@app.route("/blog")
+def blog():
+    return render_template('blog.html', url=os.getenv("URL"))
+@app.route("/blog.mlh")
+def blogmlh():
+    return render_template('mlh.html', url=os.getenv("URL"))
+
 @app.route("/api/timeline_post", methods=['GET'])
 def get_time_line_post():
     return {

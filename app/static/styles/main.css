@@ -1,3 +1,5 @@
+@import url("https://fontlibrary.org/face/dejavu-sans-mono");
+
 /* Vars  */
 
 :root {
@@ -47,7 +49,6 @@ body {
 
 header {
   width: 100%;
-  height: 100vh;
 }
 
 .container {
@@ -689,6 +690,65 @@ nav .fas {
   border-left: 4px solid #0078ff;
   padding: 18px;
   font-style: italic;
+}
+
+/*------- Blog -----------*/
+.text-content p span {
+  color: #4dc4d6;
+  font-family: monospace;
+  letter-spacing: 0.15em;
+  font-size: 100%;
+}
+.info {
+  padding: 40px 15% 40px 15%;
+  color: var(--font-color-root);
+  font-family: monospace;
+  letter-spacing: 0.1em;
+  font-size: 150%;
+  text-align: justify;
+}
+.info span {
+  font-size: 70%;
+  margin-left: 2em;
+}
+
+.contact2-left {
+  flex-basis: 45%;
+}
+
+.contact2-right {
+  flex-basis: 50%;
+}
+
+.contact2-left p {
+  margin-top: 30px;
+}
+
+.contact2-left p i {
+  color: #4dc4d6;
+  margin-right: 15px;
+  font-size: 25px;
+}
+/* DEMO-SPECIFIC STYLES */
+.typewriter {
+  color: var(--font-color-root);
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: 0.15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(30, end);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /*-----------Map-----------*/

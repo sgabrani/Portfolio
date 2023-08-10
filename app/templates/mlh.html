@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:title" content="Personal Portfolio" />
+    <meta property="og:description" content="My Personal Portfolio" />
+    <meta property="og:url" content="{{ url }}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+    <link rel="icon" href="./static/img/download.png" type="image/x-icon" />
+    <title>Sahiti Gabrani</title>
+    <script
+      src="https://kit.fontawesome.com/1690528c5b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/">
+            <img src="./static/img/download.png" class="nav-logo" />
+          </a>
+          <ul id="sidemenu">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="/hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li>
+              <button
+                class="dark-mode-toggle"
+                onclick="toggleDarkMode()"
+                aria-label="dark mode toggle button"
+              >
+                <span class="fa fa-fw fa-cloud-sun"></span>
+              </button>
+            </li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <div class="header-text">
+          <div class="text-content">
+            <p class="typewriter">
+              Welcome to my mess of a brain... I meant <span>blog</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="info">
+        <h3>All About MLH</h3>
+        <p style="font-size: 70%; padding-bottom: 10%">
+          <br />
+          Aug 8, 2023 ~ 3 minute read
+        </p>
+        <hr color="#4dc4d6" />
+        <p style="padding-bottom: 10%; padding-top: 10%">
+          Although Production Engineering (or Site Reliability Engineering) had
+          always been something I wanted to explore, I didn’t get the chance to
+          until I won the QWER Hacks 2023 at UCLA. This Hackathon was hosted by
+          MLH and it gave me a fastrack path to the Fellowship, and I jumped at
+          the chance. Learning DevOps tools for the last 6 weeks has been
+          enriching, learning as much from the LMS Modules and assignments as I
+          have from my pod mates and mentors. <br /><br />
+          The best part has been facing my fear of all things Operating Systems,
+          by reading about Linux Fundamentals, even deploying my portfolio
+          website on Digital Ocean. I’ve also been writing shell scripts as MLH
+          presents challenges such as automating deployment. A delightful
+          experience has been attending the workshops and Mock Interviews
+          arranged, something that has certainly helped me become more familiar
+          with Systems. <br /><br />
+          I also integrated MySQL with my Flask application and set it up on
+          Docker, another useful platform which I have been meaning to learn to
+          use for a while. In this process, I ran into some errors as the MYSQL
+          server simply refused to connect. After scouring countless posts on
+          StackOverflow, the Meta Mentors and Pod Leader assigned to me came
+          through and helped me resolve the issue.
+          <br /><br />
+          Despite the bugs keeping me up at night and scratching my head, the
+          Stand Up meetings getting to know my Pod Mates and playing games has
+          been been more enjoyable than I anticipated. If you’re starting out
+          your career in the world of Computer Science, or simply looking to add
+          to your knowledge, I recommend trying this out!
+        </p>
+        <hr color="#4dc4d6" />
+      </div>
+      <div class="info">
+        <div class="row">
+          <div class="contact2-right">
+            <h3>Tell me what you think</h3>
+            <div class="social-icons">
+              <!--<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>-->
+              <a
+                href="https://www.linkedin.com/in/sahiti-gabrani/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/sahiti_gabrani/?next=%2F"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://github.com/sgabrani" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://github.com/sgabrani" target="_blank"
+                ><i class="fa-brands fa-spotify"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact2-left">
+            <p><i class="fas fa-envelope"></i> sgabrani@ucla.edu</p>
+            <p><i class="fas fa-paper-plane"></i> sahitigabrani@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------Footer----------->
+    <div class="footer">
+      <p>Made by Sahiti Gabrani <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+
+    <script>
+      const scriptURL = "<SCRIPT URL>";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script>
+      // light and dark mode
+      let darkMode = false;
+      let rootStyle = getComputedStyle(document.body);
+
+      function setDarkMode(newMode) {
+        rootStyle = getComputedStyle(document.body);
+        document.documentElement.style.setProperty(
+          "--font-color-root",
+          rootStyle.getPropertyValue(`--font-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--font-em-color-root",
+          rootStyle.getPropertyValue(`--font-em-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--background-color-root",
+          rootStyle.getPropertyValue(`--background-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--background-card-root",
+          rootStyle.getPropertyValue(`--background-card-${newMode}-mode`)
+        );
+      }
+      function toggleDarkMode() {
+        if (darkMode) {
+          // switch to light
+          setDarkMode("light");
+        } else {
+          // switch to dark
+          setDarkMode("dark");
+        }
+        darkMode = !darkMode;
+      }
+
+      // event listener for light/dark mode switch
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+      darkModeMediaQuery.addListener((e) => {
+        const darkModeOn = e.matches;
+        console.log(`Dark was toggled to ${darkModeOn ? "🌒 on" : "☀️ off"}.`);
+        toggleDarkMode();
+      });
+    </script>
+  </body>
+</html>

@@ -42,7 +42,7 @@ $headers = "From:" . $email;
   </head>
 
   <body>
-    <header>
+    <header style="height: 100vh">
       <div class="container">
         <nav>
           <a href="/">
@@ -70,8 +70,17 @@ $headers = "From:" . $email;
 
         <div class="header-text">
           <div class="text-content">
-            <p>SWE Intern @ Innodata</p>
-            <h5><span>{{ name }}</span> (she/her)</h5>
+            <p>Heyy! My name is</p>
+            <h5><span>{{ name }}</span></h5>
+            <p style="font-size: 65%">
+              <br />
+              Currently I am...
+            </p>
+            <p style="font-size: 75%">
+              Junior, CS @ UCLA <br />
+              SWE Intern @ Innodata <br />
+              Production Engineering Fellow @ MLH
+            </p>
           </div>
           <div class="image-container">
             <img src="./static/img/Gabrani_Sahiti.jpeg" alt="PROFILE_PICTURE" />
@@ -86,10 +95,16 @@ $headers = "From:" . $email;
         <h1 class="sub-title">About Me</h1>
         <div class="divider">
           <div class="col">
-            <h3 style="padding-top: 20px">
-              Hi! I'm a Junior at UCLA with a Computer Science major graduating
-              June 2025.
-            </h3>
+            <p style="padding-top: 20px; font-size: 125%">
+              Software Developer looking to make an impact all the while meeting
+              and learning from the interesting people around me. I'm in the
+              process of doing my undergrad from UCLA as a Computer Science
+              major. <br /><br />
+              I'm spending the summer writing scripts in Python for my
+              internship and learning crutial DevOps skills as an MLH Fellow. In
+              my sparetime, you will find me making Spotify playlists and
+              attempting to paint my thoughts and feelings.
+            </p>
 
             <!--We can change these tabs to be other categories, like fun facts, coursework, etc-->
             <div class="tab-titles" style="padding-top: 20px">
