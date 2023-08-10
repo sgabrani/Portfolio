@@ -48,9 +48,17 @@ def mail():
 @app.route("/blog")
 def blog():
     return render_template('blog.html', url=os.getenv("URL"))
+
 @app.route("/blog.mlh")
 def blogmlh():
     return render_template('mlh.html', url=os.getenv("URL"))
+@app.route("/blog.music")
+def blogmusic():
+    return render_template('music.html', url=os.getenv("URL"))
+@app.route("/blog.ucla")
+def blogucla():
+    return render_template('uclablog.html', url=os.getenv("URL"))
+
 
 @app.route("/api/timeline_post", methods=['GET'])
 def get_time_line_post():
