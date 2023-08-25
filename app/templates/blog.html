@@ -36,7 +36,7 @@
             <li><a href="/#about">About Me</a></li>
             <li><a href="/#experience">Work Experience</a></li>
             <li><a href="/#projects">Projects</a></li>
-            <li><a href="/hobbies">Hobbies</a></li>
+            <li><a href="/#hobbies">Hobbies</a></li>
             <li><a href="/#contact">Contact Me</a></li>
             <li>
               <button
@@ -93,9 +93,50 @@
         <hr color="#4dc4d6" />
       </div>
       <div class="info">
+        <form id="form">
+          <h3>Leave a comment!</h3>
+          <br />
+          <div>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div>
+            <textarea
+              id="content"
+              name="content"
+              placeholder="Comment"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="button">Post Comment</button>
+        </form>
+        <br />
+        <h2>Previous Comments</h2>
+        <br />
+        <button class="button" onclick="showList()">Show Comments</button><br />
+        <div id="timeline-posts"></div>
+        <div id="timeline-posts-container"></div>
+      </div>
+      <div class="info">
+        <hr color="#4dc4d6" />
+        <br /><br />
         <div class="row">
           <div class="contact2-right">
-            <h3>Tell me what you think</h3>
+            <h3>Say hi!</h3>
             <div class="social-icons">
               <!--<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                       <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>-->
@@ -160,23 +201,56 @@
         sidemenu.style.right = "-200px";
       }
     </script>
-
     <script>
-      const scriptURL = "<SCRIPT URL>";
-      const form = document.forms["submit-to-google-sheet"];
-      const msg = document.getElementById("msg");
-      form.addEventListener("submit", (e) => {
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            msg.innerHTML = "Message sent successfully!";
-            setTimeout(function () {
-              msg.innerHTML = "";
-            }, 5000);
-            form.reset();
-          })
-          .catch((error) => console.error("Error!", error.message));
+        // Create payload as new FormData object:
+        const payload = new FormData(form);
+        // Post the payload using Fetch:
+        fetch("/api/timeline_post", {
+          method: "POST",
+          body: payload,
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
       });
+    </script>
+    <script>
+      function showList() {
+        fetch("/api/timeline_post")
+          .then((response) => response.json())
+          .then((data) => createList(data));
+      }
+
+      function createList(data) {
+        const mainUL = document.createElement("timeline-posts-container");
+        for (let i = data.timeline_posts.length - 1; i >= 0; i--) {
+          const studentLI = document.createElement("div");
+          studentLI.innerHTML = createCard1(
+            data.timeline_posts[i].name,
+            data.timeline_posts[i].email,
+            data.timeline_posts[i].content,
+            data.timeline_posts[i].id
+          );
+          mainUL.appendChild(studentLI);
+        }
+        // append mainUL to body
+        const timelinePostsContainer =
+          document.getElementById("timeline-posts");
+        timelinePostsContainer.appendChild(mainUL);
+      }
+
+      const createCard1 = (name, email, content, id) => {
+        return `          
+        <br> 
+                  <div class="card">
+                          <h6>${name}</h6>
+                      <p class="py-4 px-4 my-3 bg-slate-100 rounded-lg">${content}</p>
+                  </div>
+          `;
+      };
     </script>
     <script>
       // light and dark mode

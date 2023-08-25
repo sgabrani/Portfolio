@@ -104,3 +104,25 @@ def delete_time_line_post(post_id):
 @app.route('/timeline')
 def timeline():
     return render_template('timelines.html', title="Timeline")
+
+
+# Delete all at once
+# @app.route('/api/timeline_post', methods=['DELETE'])
+# def deleteTimelinePosts():
+#     try:    
+#         # Delete all timeline posts
+#         TimelinePost.delete().execute()
+
+#         return jsonify({'status': 'success', 'message': 'All timeline posts deleted successfully'})
+#     except DoesNotExist:
+#         return jsonify({'status': 'error', 'message': 'No timeline posts found'})   
+
+
+@app.route('/api/timeline_post/<int:post_id>', methods=['DELETE'])
+def delete_timeline_post(post_id):
+    try:
+        timeline_post = TimelinePost.get_by_id(post_id)
+        timeline_post.delete_instance()
+        return {'message': 'Post deleted successfully'}
+    except TimelinePost.DoesNotExist:
+        return {'error': 'Post with that id not found'}

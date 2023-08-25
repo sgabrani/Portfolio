@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -23,6 +22,7 @@
       src="https://kit.fontawesome.com/1690528c5b.js"
       crossorigin="anonymous"
     ></script>
+
     <style>
       .timeline-post {
         margin-bottom: 20px;
@@ -50,24 +50,39 @@
         <h2>Create a New Post</h2>
         <br />
         <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
         </div>
         <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
         </div>
         <div>
-          <label for="content">Content:</label>
-          <textarea id="content" name="content" required></textarea>
+          <textarea
+            id="content"
+            name="content"
+            placeholder="Comment"
+            required
+          ></textarea>
         </div>
         <button type="submit" class="button">Post</button>
       </form>
       <br />
       <div id="timeline-posts"></div>
       <h2>Timeline Posts</h2>
+      <div id="posts-container" class="mt-3"></div>
+
       <button class="button" onclick="showList()">Show Posts</button>
-      <div id="users"></div>
       <ul></ul>
     </div>
     <script>
@@ -81,42 +96,26 @@
         const mainUL = document.createElement("ol");
         for (let i = data.timeline_posts.length - 1; i >= 0; i--) {
           const studentLI = document.createElement("li");
-          studentLI.innerHTML = data.timeline_posts[i].id;
-
-          const marksUL = document.createElement("ul");
-          const marksLI = document.createElement("li");
-          marksLI.innerHTML = "Name : " + data.timeline_posts[i].name;
-          marksUL.appendChild(marksLI);
-          const marksLI2 = document.createElement("li");
-          marksLI2.innerHTML = "Email : " + data.timeline_posts[i].email;
-          marksUL.appendChild(marksLI2);
-          const marksLI3 = document.createElement("li");
-          marksLI3.innerHTML = "Content : " + data.timeline_posts[i].content;
-          marksUL.appendChild(marksLI3);
-
-          // append marks list to studentLI
-          studentLI.appendChild(marksUL);
-          // append student list to mainUL
+          studentLI.innerHTML = createCard1(
+            data.timeline_posts[i].name,
+            data.timeline_posts[i].email,
+            data.timeline_posts[i].content,
+            data.timeline_posts[i].id
+          );
           mainUL.appendChild(studentLI);
         }
         // append mainUL to body
         document.body.appendChild(mainUL);
       }
-
-      // let todos = [];
-
-      // async function fetchData() {
-      //   const response = await fetch("/api/timeline_post");
-      //   const todos = await response.json();
-      //   console.log(todos);
-      //   for (let item in todos) {
-      //     for (let x in item) {
-      //       document.getElementById("users").innerHTML = item;
-      //     }
-      //   }
-      // }
-
-      // fetchData();
+      const createCard1 = (name, email, content, id) => {
+        return `           
+                    <div class="card">
+                            <h5>${name}</h5>
+                            <small class="block">&lt;${email}&gt;</small>
+                        <p class="py-4 px-4 my-3 bg-slate-100 rounded-lg">${content}.</p>
+                    </div>
+            `;
+      };
 
       const form = document.getElementById("form");
 
@@ -133,5 +132,9 @@
           .then((data) => console.log(data));
       });
     </script>
+    <!-----------Footer----------->
+    <div class="footer">
+      <p>Made by Sahiti Gabrani <i class="fa-solid fa-heart"></i></p>
+    </div>
   </body>
 </html>

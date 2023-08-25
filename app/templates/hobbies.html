@@ -1,201 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta property="og:title" content="Personal Portfolio" />
+    <meta property="og:description" content="My Personal Portfolio" />
+    <meta property="og:url" content="{{ url }}" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+    <link rel="icon" href="./static/img/download.png" type="image/x-icon" />
+    <title>Sahiti Gabrani</title>
+    <script
+      src="https://kit.fontawesome.com/1690528c5b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-    <script src="https://kit.fontawesome.com/1690528c5b.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-    crossorigin=""/>
-    <title>Hobbies</title>
-</head>
-
-<body style="background-color: black;">
-    <div class="container">
+  <body>
+    <header>
+      <div class="container">
         <nav>
-            <a href="/">
-                <img src="./static/img/logo.svg" class="nav-logo"/>
-            </a>
-            <ul id="sidemenu" style="color: #fff;">
-                <li><a href="/#about">About Me</a></li>
-                <li><a href="/#experience">Work Experience</a></li>
-                <li><a href="/#projects">Projects</a></li>
-                <li><a href="/hobbies">Hobbies</a></li>
-                <li><a href="/#contact">Contact Me</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i>
-            </ul>
-            <i class="fas fa-bars" style="color: #fff;" onclick="openmenu()"></i>
+          <a href="/">
+            <img src="./static/img/download.png" class="nav-logo" />
+          </a>
+          <ul id="sidemenu">
+            <li><a href="/#about">About Me</a></li>
+            <li><a href="/#experience">Work Experience</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/hobbies">Hobbies</a></li>
+            <li><a href="/#contact">Contact Me</a></li>
+            <li>
+              <button
+                class="dark-mode-toggle"
+                onclick="toggleDarkMode()"
+                aria-label="dark mode toggle button"
+              >
+                <span class="fa fa-fw fa-cloud-sun"></span>
+              </button>
+            </li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
-    </div>
-    
-    <!-- HOBBIES SECTION -->
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="title-box text-center">
-                  <h3 class="title-a">
-                    Hobbies
-                  </h3>
-                  <p class="subtitle-a">
-                  other fun things besides computer science...
-                  </p>
-                  <div class="line-mf"></div>
-                </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 class="sub-title">Hobbies</h1><br><br>
+      <div class="row2">
+        <div class="col-1-of-3">
+          <div class="card2">
+            <div class="card__side card__side--front-1">
+              <div class="card__title card__title--1">
+                <i class="fas fa-birthday-cake"></i><br>
+                <h4 class="card__heading">Baking</h4>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card card-blog">
-                  <div class="card-img">
-                    <img src="./static/img/logo.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="card-body">
-                    <div class="card-category-box">
-                      <div class="card-category">
-                        <h6 class="category">Travel</h6>
-                      </div>
-                    </div>
-                    <h3 class="card-title">i loveee to travel</h3>
-                    <p class="card-description">
-                      Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                      a pellentesque nec,
-                      egestas non nisi.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card card-blog">
-                  <div class="card-img">
-                    <img src="./static/img/logo.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="card-body">
-                    <div class="card-category-box">
-                      <div class="card-category">
-                        <h6 class="category">Gym</h6>
-                      </div>
-                    </div>
-                    <h3 class="card-title">Being active is a must</h3>
-                    <p class="card-description">
-                      Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                      a pellentesque nec,
-                      egestas non nisi.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="card card-blog">
-                  <div class="card-img">
-                    <img src="./static/img/logo.jpg" alt="" class="img-fluid">
-                  </div>
-                  <div class="card-body">
-                    <div class="card-category-box">
-                      <div class="card-category">
-                        <h6 class="category">Films</h6>
-                      </div>
-                    </div>
-                    <h3 class="card-title">nothing better than going to the cinema</h3>
-                    <p class="card-description">
-                      Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                      a pellentesque nec,
-                      egestas non nisi.
-                    </p>
-                  </div>
-                </div>
+            <div class="card__side card__side--back card__side--back-1">
+              <div class="card__cta">
+                I've been baking with my mom since I was old enough to stand, and I even took professional classes in middle school for bakery items and donuts!
               </div>
             </div>
           </div>
-    </section>
-    <!-- HOBBIES SECTION ENDS -->
+        </div>
 
-    <!-- MAP SECTION ENDS -->
-    <section id="blog">
-        <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="title-box text-center">
-                    <h3 class="title-a">
-                    Cool places I've been to
-                    </h3>
-                    <p class="subtitle-a">
-                    and I'm just starting...
-                    </p>
-                    <div class="line-mf"></div>
-                </div>
+        <div class="col-1-of-3">
+          <div class="card2">
+            <div class="card__side card__side--front-1">
+              <div class="card__title card__title--2">
+                <i class="fas fa-plane"></i><br>
+                <h4 class="card__heading">Travel</h4>
+              </div>
             </div>
-
-        <!-- Make sure you put this AFTER Leaflet's CSS -->
-        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-        crossorigin=""></script>
-
-        <div id="map"></div>
-
-        <script>
-            var map = L.map('map').setView([51.505, -0.09], 13);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '© OpenStreetMap'
-            }).addTo(map);
-
-            var marker = L.marker([50.8214626, -0.1400561]).addTo(map);
-            marker.bindPopup("<h5 style='font-weight:bold'>Brighton, UK</h5><h6>I learned English living here for 9 months!!</h6>");
-
-            var marker = L.marker([43.7047452, 7.2615981]).addTo(map);
-            marker.bindPopup("<h5 style='font-weight:bold'>Nice, France</h5><h6>I learned French living here for 4 months!!</h6>");
-
-            var marker = L.marker([50.1029026, 14.3946353]).addTo(map);
-            marker.bindPopup("<h5 style='font-weight:bold'>Prague, Czech Republic</h5><h6>I lived here for a month <3</h6>");
-
-            var marker = L.marker([45.4851606, -73.7287927]).addTo(map);
-            marker.bindPopup("<h5 style='font-weight:bold'>Montreal, Canadá</h5><h6>Last semester I studied here!!</h6>");
-
-            var marker = L.marker([55.6867243, 12.5700724]).addTo(map);
-            marker.bindPopup("<h5 style='font-weight:bold'>Copenhague, Denmark</h5><h6>One of my best trips i have done with my friends<333</h6>");
-
-            var marker = L.marker([25.6308481, -100.2844569]).addTo(map);
-            marker.bindPopup("<h5 style='font-weight:bold'>Monterrey, Nuevo León</h5><h6>I'm going to university here</h6>");
-
-            map.setView([0, 0], 1.5);
-        </script>
+            <div class="card__side card__side--back card__side--back-1">
+              <div class="card__cta">
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-    </section>
-    <!-- MAP SECTION ENDS -->
 
+        <div class="col-1-of-3">
+          <div class="card2">
+            <div class="card__side card__side--front-1">
+              <div class="card__title card__title--3">
+                <i class="fas fa-paint-brush"></i><br>
+                <h4 class="card__heading">Painting</h4>
+              </div>
+            </div>
+            <div class="card__side card__side--back card__side--back-1">
+              <div class="card__cta">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
     <!-----------Footer----------->
-    <div class="footer" style="margin-top: 40px; padding-top: 25px; padding-bottom: 10px;">
-        <p>Made by NAME <i class="fa-solid fa-heart"></i></p>
+    <div class="footer">
+      <p>Made by Sahiti Gabrani <i class="fa-solid fa-heart"></i></p>
     </div>
 
     <script>
-        var sidemenu = document.getElementById("sidemenu");
-    
-        function openmenu() {
-            sidemenu.style.right = "0";
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
         }
-    
-        function closemenu() {
-            sidemenu.style.right = "-200px";
+
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
         }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
     </script>
 
-</body>
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+
+    <script>
+      const scriptURL = "<SCRIPT URL>";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script>
+      // light and dark mode
+      let darkMode = false;
+      let rootStyle = getComputedStyle(document.body);
+
+      function setDarkMode(newMode) {
+        rootStyle = getComputedStyle(document.body);
+        document.documentElement.style.setProperty(
+          "--font-color-root",
+          rootStyle.getPropertyValue(`--font-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--font-em-color-root",
+          rootStyle.getPropertyValue(`--font-em-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--background-color-root",
+          rootStyle.getPropertyValue(`--background-color-${newMode}-mode`)
+        );
+        document.documentElement.style.setProperty(
+          "--background-card-root",
+          rootStyle.getPropertyValue(`--background-card-${newMode}-mode`)
+        );
+      }
+      function toggleDarkMode() {
+        if (darkMode) {
+          // switch to light
+          setDarkMode("light");
+        } else {
+          // switch to dark
+          setDarkMode("dark");
+        }
+        darkMode = !darkMode;
+      }
+
+      // event listener for light/dark mode switch
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+      darkModeMediaQuery.addListener((e) => {
+        const darkModeOn = e.matches;
+        console.log(`Dark was toggled to ${darkModeOn ? "🌒 on" : "☀️ off"}.`);
+        toggleDarkMode();
+      });
+    </script>
+  </body>
 </html>
