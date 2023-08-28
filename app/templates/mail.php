@@ -3,8 +3,6 @@
 $subject = $_POST['name'];
 $from = "sahitigabrani@gmail.com";
 $to = "sahitigabrani@gmail.com";
-
-//data
 $message= $_POST['message'];
 
 //Headers
