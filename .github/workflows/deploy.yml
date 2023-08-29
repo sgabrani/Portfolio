@@ -30,6 +30,7 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_IP: ${{ secrets.SSH_IP }}
+          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
 
       - name: Print project root directory
         run: ssh my-vps 'cd ${{secrets.PROJECT_ROOT }} && pwd'
