@@ -38,10 +38,4 @@ You should get a response like this in the terminal:
 
 You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
 
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. We'll go through how to host it in the cloud in the next few weeks!* 
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal.* 
